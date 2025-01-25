@@ -16,7 +16,7 @@ function Login({setIsAuth}){
     return(
 
         
-        <div className="place-items-center">
+        <div className="place-items-center h-full">
             <img src="https://media.istockphoto.com/id/2189345609/vector/easter-bunny-rabbit-peeking-around-sign-cartoon.jpg?s=612x612&w=0&k=20&c=70MrQkbgz5ywTvHm7lpPSJjkgFQOhR7RnNDc4k0FheU=" alt="" 
             className="w-40 h-50 pt-16"/>
             <div className=" text-center pb-10 pt-5 w-5/12 mb-10">

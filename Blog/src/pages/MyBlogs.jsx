@@ -37,10 +37,11 @@ function MyBlogs({isAuth}){
 
     return(
             <>
-            <div id="myBlogs" className=" place-items-center py-10 ">
+            <div id="myBlogs" className=" place-items-center py-10">
                 {postList.map((post)=>{
                     return(
-                        (post.author.id === auth.currentUser.uid && <div id="post" className=" w-1/2 rounded-lg my-5 p-5 border-amber-900 border-2 bg-yellow-200">
+                        (post.author.id === auth.currentUser.uid && 
+                        <div id="post" className=" w-1/2 rounded-lg my-5 p-5 border-amber-900 border-2 bg-yellow-200 shadow-amber-900 shadow-md">
                             <div id="postHeader" className=" flex justify-between">
                                 <div id="title" className=" text-3xl font-semibold">
                                     <h1>{post.title}</h1>
