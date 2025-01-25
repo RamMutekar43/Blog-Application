@@ -51,7 +51,7 @@ function MyBlogs({isAuth}){
                                         (<button className=" bg-red-600 w-10 h-10 rounded-full text-white"
                                         onClick={()=>{
                                         deletePost(post.id);
-                                    }}><i class="ri-delete-bin-6-line"></i></button>)}
+                                    }}><i className="ri-delete-bin-6-line"></i></button>)}
                                 </div>
                             </div>
                             <div id="postTextContainer" className=" py-5 ">

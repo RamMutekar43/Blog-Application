@@ -6,6 +6,7 @@ import CreatePost from "./pages/CreatePost"
 import Footer from './components/Footer';
 import { useState } from 'react';
 import MyBlogs from './pages/MyBlogs';
+import {signOut} from "firebase/auth"
 
 
 
