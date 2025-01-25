@@ -1,5 +1,5 @@
 import './App.css'
-import {BrowserRouter as Router, Routes, Route, Link, NavLink} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, NavLink} from 'react-router-dom';
 import Home from "./pages/Home" 
 import Login from "./pages/Login" 
 import CreatePost from "./pages/CreatePost" 
