@@ -1,16 +1,18 @@
 import './App.css'
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Link, NavLink} from 'react-router-dom';
 import Home from "./pages/Home" 
 import Login from "./pages/Login" 
 import CreatePost from "./pages/CreatePost" 
 // import Header from './components/Header';
 import Footer from './components/Footer';
 import { useState } from 'react';
+import MyBlogs from './pages/MyBlogs';
 
 
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  // const [isAuth, setIsAuth] = useState(false);
   const userSignOut = ()=>{
     signOut(auth).then(()=>{
       console.log("Function works")
@@ -31,18 +33,24 @@ function App() {
                 <div id="nav-right" className=' w-2/4 h-full pe-14'>
                     <ul className=' flex justify-end items-center h-full font-semibold gap-10'>
                             <li><Link to="/" 
-                            className={`text-amber-900 font-bold border border-amber-900 px-6 py-3 rounded-full border-2`}>
+                            className={`text-amber-900 font-bold border-amber-900 px-6 py-3 rounded-full border-2 hover:bg-yellow-200`}>
                             Home</Link></li>
                             {!isAuth ? <li><Link to="/login"
-                            className={`text-amber-900 font-bold border border-amber-900 px-6 py-3 rounded-full border-2`}>
+                            className={`text-amber-900 font-bold border-amber-900 px-6 py-3 rounded-full border-2 hover:bg-yellow-200`}>
                             Login</Link></li> : 
                             <>
+                            <li><Link to="/myblogs"
+                            className={`text-amber-900 font-bold border-amber-900 px-6 py-3 rounded-full border-2 hover:bg-yellow-200`}>
+                            My Blogs</Link></li>
                             <li><Link to="/createPost"
-                            className={`text-amber-900 font-bold border border-amber-900 px-6 py-3 rounded-full border-2`}>
+                            className={`text-amber-900 font-bold border-amber-900 px-6 py-3 rounded-full border-2 hover:bg-yellow-200`}>
                             Create Post</Link></li>
                             <li><Link to="/login"
-                            className={`text-amber-900 font-bold border border-amber-900 px-6 py-3 rounded-full border-2`}
-                            onClick={userSignOut}>
+                            className={`text-amber-900 font-bold border-amber-900 px-6 py-3 rounded-full border-2 hover:bg-yellow-200`}
+                            onClick={()=>{
+                              userSignOut;
+                              setIsAuth(!isAuth)
+                            }} >
                             Logout</Link></li>
                             </>
                             }
@@ -53,6 +61,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home isAuth= {isAuth}/>} />
+        <Route path="/myblogs" element={<MyBlogs isAuth={isAuth}/>}/>
         <Route path="/login" element={<Login setIsAuth = {setIsAuth}/>} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth}/>} />
       </Routes>

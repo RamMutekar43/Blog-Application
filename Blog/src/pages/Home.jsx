@@ -32,10 +32,10 @@ function Home({isAuth}){
 
     return(
         <>
-        <div id="homePage" className=" place-items-center py-10">
+        <div id="homePage" className=" place-items-center py-10 ">
             {postList.map((post)=>{
                 return(
-                    <div id="post" className=" w-1/2 rounded-lg my-5 p-5 border-amber-900 border-2 bg-yellow-200">
+                    <div id="post" className=" w-1/2 rounded-lg my-5 p-5 border-amber-900 border-2 bg-yellow-200 shadow-amber-900 shadow-md">
                         <div id="postHeader" className=" flex justify-between">
                             <div id="title" className=" text-3xl font-semibold">
                                 <h1>{post.title}</h1>
