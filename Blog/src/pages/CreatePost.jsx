@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {addDoc, collection} from "firebase/firestore"
 import { auth, db} from "../firebase-config.js"
 import { useNavigate} from "react-router-dom"
+import Chatbot from "../components/ChatBot/Chatbot.jsx";
  
 function CreatePost({isAuth}){
     const [title, setTitle] = useState("")
@@ -26,8 +27,12 @@ function CreatePost({isAuth}){
     },[])
     
     return(
-        <div id="postPage" className=" place-items-center text-white h-full py-20">
-            <div id="pageContainer" className=" bg-amber-900 w-5/12 pt-5 px-5 rounded-md">
+        <div id="postPage" className=" flex text-white place-content-center items-center gap-5 h-full">
+
+            
+                <Chatbot/>
+
+            <div id="pageContainer" className=" bg-amber-900 w-5/12 px-5 pt-5 mt-16 mb-24 rounded-md">
                 <div className=" w-full">
                     <h1 className=" text-center font-bold text-xl">Create A Post</h1>
                     <div className=" flex flex-col w-full pt-5">

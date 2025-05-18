@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import {collection, deleteDoc, doc, getDocs} from "firebase/firestore"
 import {auth, db} from "../firebase-config.js"
+// import axios from 'axios';
+// import Chatbot from "../components/ChatBot/Chatbot.jsx";
 
 function Home({isAuth}){
     const [postList, setPostList] = useState([]);
     const postCollectionRef = collection(db, "posts");
-    console.log(auth.currentUser)
+    // console.log(auth.currentUser)
 
     const deletePost = async (id) => {
         try {
@@ -35,6 +37,9 @@ function Home({isAuth}){
     return(
         <>
         <div id="homePage" className=" place-items-center py-10 ">
+            {/* <Chatbot/> */}
+
+            {/* <div className="max-h-screen w-1/2 overflow-y-auto fixed right-0 px-10"> */}
             {postList.map((post)=>{
                 return(
                     <div id="post" className=" w-1/2 rounded-lg my-5 p-5 border-amber-900 border-2 bg-yellow-200 shadow-amber-900 shadow-md">
@@ -58,7 +63,8 @@ function Home({isAuth}){
                     </div>
                 )
             })}
-        </div>
+            </div>
+        {/* </div> */}
         </>
         
     )
