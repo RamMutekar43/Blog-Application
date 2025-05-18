@@ -31,9 +31,9 @@ const Chatbot = () => {
                 <h1 className=" font-semibold">{resQue}?</h1><br/>
                 <h3>{ans}</h3>
                 </>)
-                :null}
+                :"Ask a question & wait for the answer..."}
             </div>
-            <textarea id="" placeholder="Ask your question here." rows={"3"} className="text-black border border-amber-600 rounded px-2 block resize-y w-full my-5
+            <textarea id="" placeholder="What is your question?" rows={"3"} className="text-black border border-amber-600 rounded px-2 block resize-y w-full my-5
             scrollbar-none overscroll-y-auto focus:ring-2 focus:outline-none focus:ring-amber-600" 
             onChange={(event)=>{setQue(event.target.value)}}></textarea>
             <div className='w-full flex min-h-5 items-center justify-center'>
