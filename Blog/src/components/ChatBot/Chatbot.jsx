@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+// Chatbot component
 
+import React, { useState } from 'react'
 import axios from 'axios';
 
 const Chatbot = () => {
-     const api = "AIzaSyAALh8qA0aGGSGxAZUc55jaXJ9dQqbSVZc"
-        const [que, setQue] = useState("");
-        const [ans, setAns] = useState("");
-        const [resQue, setResQue] = useState("");
+
+    //  Chatbot code 
+
+    const api = "AIzaSyAALh8qA0aGGSGxAZUc55jaXJ9dQqbSVZc"
+    const [que, setQue] = useState("");
+    const [ans, setAns] = useState("");
+    const [resQue, setResQue] = useState("");
 
     const chatBot =  async ()=>{
         const res = await axios({
@@ -20,6 +24,7 @@ const Chatbot = () => {
         setAns(res["data"]["candidates"][0]["content"]["parts"][0]["text"])
         // console.log(res["data"]["candidates"][0]["content"]["parts"][0]["text"])
     }
+
   return (
     <div id="chatBot" className=" w-2/5 min-h-9 text-black px-12">
             <div className='w-full flex min-h-5 items-center justify-center'>

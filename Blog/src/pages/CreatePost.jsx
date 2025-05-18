@@ -11,6 +11,7 @@ function CreatePost({isAuth}){
     const postCollectionRef = collection(db, "posts")
     const navigate = useNavigate()
 
+    // function to create a blog post
     const createPost = async ()=>{
         await addDoc(postCollectionRef, {
             title,

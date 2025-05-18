@@ -7,7 +7,8 @@ function MyBlogs({isAuth}){
     const [postList, setPostList] = useState([]);
     const postCollectionRef = collection(db, "posts");
     const navigate = useNavigate();
-    
+
+    // function for delete post 
     const deletePost = async (id) => {
         try {
         const postDoc = doc(db, "posts", id);
@@ -17,7 +18,8 @@ function MyBlogs({isAuth}){
         console.log("ERROR DELETING POST: ", error);
         }
     }
-    
+
+    // function to fetch blogs of the current user 
     useEffect(()=>{
         const getPosts = async () => {
             const data = await getDocs(postCollectionRef);
@@ -32,7 +34,6 @@ function MyBlogs({isAuth}){
         if(!isAuth){
             navigate("/login");
         }
-    
     },[deletePost])
 
     return(

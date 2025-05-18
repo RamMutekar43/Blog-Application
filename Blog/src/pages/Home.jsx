@@ -7,8 +7,9 @@ import {auth, db} from "../firebase-config.js"
 function Home({isAuth}){
     const [postList, setPostList] = useState([]);
     const postCollectionRef = collection(db, "posts");
-    // console.log(auth.currentUser)
 
+    
+    // function for delete post 
     const deletePost = async (id) => {
         try {
             const postDoc = doc(db, "posts", id);
@@ -19,6 +20,7 @@ function Home({isAuth}){
         }
     }
 
+    // function to fetch all blogs to display at home page
     useEffect(()=>{
         const getPosts = async () => {
             const data = await getDocs(postCollectionRef);
@@ -30,7 +32,6 @@ function Home({isAuth}){
             }
         }
         getPosts();
-
     },[deletePost])
 
 
@@ -39,7 +40,6 @@ function Home({isAuth}){
         <div id="homePage" className=" place-items-center py-10 ">
             {/* <Chatbot/> */}
 
-            {/* <div className="max-h-screen w-1/2 overflow-y-auto fixed right-0 px-10"> */}
             {postList.map((post)=>{
                 return(
                     <div id="post" className=" w-1/2 rounded-lg my-5 p-5 border-amber-900 border-2 bg-yellow-200 shadow-amber-900 shadow-md">

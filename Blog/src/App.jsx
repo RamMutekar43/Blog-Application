@@ -23,6 +23,7 @@ function App() {
 
 
   return (
+    // Routes and navbar
     <Router> 
       <div className=' w-full h-28 bg-slate-200'>
             <nav className=' flex justify-between h-28 items-center py-6 px-10 bg-white border-b-2 border-amber-900 fixed top-0 w-full'>

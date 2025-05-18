@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Login({setIsAuth}){
     const navigate = useNavigate();
 
+    // function - sigin with google using firebase
     const signInWithGoogle = ()=>{
         signInWithPopup(auth, provider).then(()=>{
             localStorage.setItem("isAuth", true);
@@ -13,6 +14,8 @@ function Login({setIsAuth}){
             navigate('/')
         })
     }
+
+
     return(
 
         
