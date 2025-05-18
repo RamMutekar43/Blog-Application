@@ -17,7 +17,7 @@ const Chatbot = () => {
             }
         })
         setResQue(que)
-        setAns(JSON.stringify(res["data"]["candidates"][0]["content"]["parts"][0]["text"]))
+        setAns(res["data"]["candidates"][0]["content"]["parts"][0]["text"])
         // console.log(res["data"]["candidates"][0]["content"]["parts"][0]["text"])
     }
   return (
@@ -26,8 +26,12 @@ const Chatbot = () => {
                 <h1 className=" text-amber-900 py-2 font-bold text-xl">Your Friendly Chatbot</h1>
             </div>
             <div className=" h-80 border border-amber-900 p-5 overflow-y-auto bg-amber-200 rounded-md text-amber-950">
-                {ans?(<><h1 className=" font-semibold">{resQue}?</h1><br/></>):null}
-                {ans? ans : "Answer..."}
+                {ans?
+                (<>
+                <h1 className=" font-semibold">{resQue}?</h1><br/>
+                <h3>{ans}</h3>
+                </>)
+                :null}
             </div>
             <textarea id="" placeholder="Ask your question here." rows={"3"} className="text-black border border-amber-600 rounded px-2 block resize-y w-full my-5
             scrollbar-none overscroll-y-auto focus:ring-2 focus:outline-none focus:ring-amber-600" 
