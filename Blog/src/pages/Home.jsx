@@ -5,6 +5,7 @@ import {auth, db} from "../firebase-config.js"
 function Home({isAuth}){
     const [postList, setPostList] = useState([]);
     const postCollectionRef = collection(db, "posts");
+    console.log(auth.currentUser)
 
     const deletePost = async (id) => {
         try {
@@ -21,6 +22,7 @@ function Home({isAuth}){
             const data = await getDocs(postCollectionRef);
             try {
                 setPostList(data.docs.map((doc)=>({...doc.data(), id: doc.id})));
+                // localStorage.clear()
             } catch (error) {
                 console.log("ERROR FETCHING FIREBASE DATA: ", error)
             }
@@ -58,6 +60,7 @@ function Home({isAuth}){
             })}
         </div>
         </>
+        
     )
 }
 
